@@ -1,21 +1,22 @@
 
 class Config(object):
-
-	# Common configurations
+    #Common configurations
 
 
 class DevelopmentConfig(Config):
+    #Development configurations
+  
 
-	DEBUG = True
-	SQLALCHEMY_ECHO = True
+    DEBUG = True
+    SQLALCHEMY_ECHO = True
 
 
 class ProductionConfig(Config):
+    #Production configurations
 
-	DEBUG = False
-
+    DEBUG = False
 
 app_config = {
-	'development': DevelopmentConfig
-	'production': ProductionConfig
+    'development': DevelopmentConfig,
+    'production': ProductionConfig
 }
