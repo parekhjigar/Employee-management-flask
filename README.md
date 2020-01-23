@@ -26,18 +26,18 @@ Download [Anaconda](https://www.anaconda.com/distribution/#download-section)
 
 **NOTE: Use Legacy Passowrd Encryption while setting up MySQL**
 
-(flaskenv):$ mysql -u root -p
+`(flaskenv):$ mysql -u root -p`
 
-##### Creating user with username- em_admin and password- em2020
+### Creating user with username- em_admin and password- em2020
 
 `mysql> CREATE USER 'em_admin'@'localhost' IDENTIFIED BY 'em2020';
 Query OK, 0 rows affected (0.01 sec)`
 
-##### Creating database named- emp_db
+### Creating database named- emp_db
 
 `mysql> CREATE DATABASE emp_db;`
 
-##### Granting access to our user
+### Granting access to our user
 
 `mysql> GRANT ALL PRIVILEGES ON emp_db . * TO 'em_admin'@'localhost';`
 
@@ -85,3 +85,7 @@ Query OK, 0 rows affected (0.01 sec)`
 | roles           |
 +-----------------+
 4 rows in set (0.00 sec)`
+
+### Creating registration and login forms
+
+`pip install Flask-WTF`
