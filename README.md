@@ -24,7 +24,7 @@ Download [Anaconda](https://www.anaconda.com/distribution/#download-section)
 
 ## Install [MySQL](https://dev.mysql.com/downloads/mysql/)
 
-**NOTE: Use Legacy Passowrd Encryption while setting up MySQL**
+### NOTE: Use Legacy Passowrd Encryption while setting up MySQL
 
 `(flaskenv):$ mysql -u root -p`
 
@@ -40,7 +40,6 @@ Query OK, 0 rows affected (0.01 sec)`
 ### Granting access to our user
 
 `mysql> GRANT ALL PRIVILEGES ON emp_db . * TO 'em_admin'@'localhost';`
-
 
 ## Models- Employee, Department and Role
 
@@ -89,3 +88,5 @@ Query OK, 0 rows affected (0.01 sec)`
 ### Creating registration and login forms
 
 `pip install Flask-WTF`
+
+`pip install flask-bootstrap`
