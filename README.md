@@ -1,6 +1,6 @@
 # Employee-Management-flask-webapp
 
-This is developed on MacOS Catalina
+This is developed on MacOS Catalina with Python version 2.7 using Anaconda.
 
 ## Installing Anaconda
 
@@ -10,21 +10,39 @@ Download [Anaconda](https://www.anaconda.com/distribution/#download-section)
 
 	`$ conda create -n flaskenv python=2.7 anaconda`
 
-#### Activate the environment
+### Activate the environment
 
 	`$ conda activate flaskenv`
 
-##### To deactivate an active environment, use
+### To deactivate an active environment, use
 
 	`$ conda deactivate`
 
 ## Install Flask
 
 	`$ pip install Flask`
+	
+## Other dependencies
 
-### Install [MySQL](https://dev.mysql.com/downloads/mysql/)
+	`click==6.6`
+Click is Command Line Interface Creation Kit which is used to add custom shell commands for the webapp.
 
-### NOTE: Use Legacy Passowrd Encryption while setting up MySQL
+	`itsdangerous==0.24`
+ItsDangerous provides security when sending data using cryptographical signing.
+
+	`jinja2==2.8`
+Jinja2 is a templating language which is used to create HTML markup formats that are returned to the user upon an HTTP request. Moreover it is even used for Template Inheritance wherein we can save a basic layout in a base template and extend it to other pages.
+
+	`MarkupSafe==0.23`
+MarkupSafe is a string handling library that implements a text object that escapes characters so it is safe to use in HTML and XML.
+
+	`Werkzeug==0.11.11`
+Werkzeug is a utility library for WSGI(Web Server Gateway Interface) a protocol that ensures web apps and web servers can communicate effectively.
+	
+
+## Install [MySQL](https://dev.mysql.com/downloads/mysql/)
+
+##### NOTE: Use Legacy Passowrd Encryption while setting up MySQL
 
 	`(flaskenv):$ mysql -u root -p`
 
