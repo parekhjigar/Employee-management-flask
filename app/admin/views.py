@@ -17,7 +17,6 @@ def check_admin():
 
 # Department Views
 
-
 @admin.route('/departments', methods=['GET', 'POST'])
 @login_required
 def list_departments():
@@ -112,7 +111,6 @@ def delete_department(id):
 
 
 # Role Views
-
 
 @admin.route('/roles')
 @login_required
