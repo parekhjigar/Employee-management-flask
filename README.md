@@ -44,6 +44,18 @@ Werkzeug is a utility library for WSGI(Web Server Gateway Interface) a protocol 
 
 ##### NOTE: Use Legacy Passowrd Encryption while setting up MySQL
 
+## Install Flask-SQLAlchemy and MySQL-Python:
+
+	`pip install flask-sqlalchemy mysql-python`
+
+SQLAlchemy is an Object Relational Mapper (ORM), which means that it connects the objects of an application to tables in a relational database management system.
+
+MYSQL-Python is a Python interface to MySQL. It will help us connect the MySQL database to the app.
+
+## Creating MySQL Database
+
+Login as the root user and enter your password
+
 	`(flaskenv):$ mysql -u root -p`
 
 ### Creating user with username- em_admin and password- em2020
@@ -58,25 +70,41 @@ Werkzeug is a utility library for WSGI(Web Server Gateway Interface) a protocol 
 ### Granting access to our user
 
 	`mysql> GRANT ALL PRIVILEGES ON emp_db . * TO 'em_admin'@'localhost';`
+	
+#### Make sure you set the FLASK_CONFIG and FLASK_APP environment variables before running the app
 
 ## Models- Employee, Department and Role
 
+Model is a representation of a database table in code.
+
 ### Installing Flask-Login
+
+For user management and handle logging in, logging out, and user sessions wherein the Employee model will inherit from Flask-Login's UserMixin class.
 
 #### For user management and handle logging in, logging out, and user sessions.
 
 	`$ pip install flask-login`
 
-### Installing flask-migrate
+## Installing flask-migrate
 
-#### Migrations allow us to manage changes we make to the models, and propagate these changes in the database.
+Migrations allow us to manage changes we make to the models, and propagate these changes in the database.
 
 	`$ pip install flask-migrate`
 
-### Create Migration Repository
+#### Create Migration Repository
 
 	`$ flask db init`
 
+This will create a "migrations" directory in the main directory
+
+	`
+	└── migrations
+	    ├── README
+	    ├── alembic.ini
+	    ├── env.py
+	    ├── script.py.mako
+	    └── versions
+	`
 #### Creating first migration
 
 	`$ flask db migrate`
@@ -102,14 +130,56 @@ Werkzeug is a utility library for WSGI(Web Server Gateway Interface) a protocol 
 	| roles           |
 	+-----------------+
 	4 rows in set (0.00 sec)`
+	
+## Blueprints
 
-### Creating registration and login forms
+Blueprints are used for organising the flask app into components, each with its own views and forms.
 
+	`
+	└── Employee-Management-Flask
+	    ├── app
+	    │   ├── __init__.py
+	    │   ├── admin
+	    │   │   ├── __init__.py
+	    │   │   ├── forms.py
+	    │   │   └── views.py
+	    │   ├── auth
+	    │   │   ├── __init__.py
+	    │   │   ├── forms.py
+	    │   │   └── views.py
+	    │   ├── home
+	    │   │   ├── __init__.py
+	    │   │   └── views.py
+	    │   ├── models.py
+	    │   ├── static
+	    │   └── templates
+	    ├── config.py
+	    ├── instance
+	    │   └── config.py
+	    ├── migrations
+	    │   ├── README
+	    │   ├── alembic.ini
+	    │   ├── env.py
+	    │   ├── script.py.mako
+	    │   └── versions
+	    │       └── a7bb5c73273d.py
+	    ├── requirements.txt
+	    └── run.py
+	`
+### Auth Blueprint- Creating registration and login forms 
+	
 	`pip install Flask-WTF`
+
+Flask-WTF is used for creating registration and login forms.
 
 	`pip install flask-bootstrap`
 
-### For unit testing
+Flask-Bootstrap iis installed to use its wtf and utils library to create templates.	
+
+
+### Flask Unit testing
 
 	`pip install Flask-Testing`
+	
+Tests help ensure that the app is working as expected, without the need to manually test all of the app's functionality.
 
