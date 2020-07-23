@@ -2,6 +2,14 @@
 
 This is developed on MacOS Catalina with Python version 2.7 using Anaconda.
 
+![Screenshot-1](Screenshot-1.png)
+
+![Screenshot-2](Screenshot-2.png)
+
+![Screenshot-3](Screenshot-3.png)
+
+![Screenshot-4](Screenshot-4.png)
+
 ## Installing Anaconda
 
 Download [Anaconda](https://www.anaconda.com/distribution/#download-section)
